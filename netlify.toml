@@ -3,19 +3,16 @@
 # ===============================================
 [build]
   # 1. Comando de Construcción (Build Command)
-  # Usamos 'npm install --force' para obligar a la instalación
-  # de dependencias y evitar el conflicto de versiones (ERESOLVE).
- command = "npm install --legacy-peer-deps && npm run build"
+  # Usamos 'npm install --legacy-peer-deps' para evitar conflictos de versiones (ERESOLVE).
+  command = "npm install --legacy-peer-deps && npm run build"
 
   # 2. Directorio de Publicación (Publish Directory)
-  # AJUSTA ESTO: Debe ser el directorio que contiene los archivos
-  # finales listos para ser servidos (ej. 'out', 'build', '.next').
-  publish = "out"
+  # AJUSTADO: Next.js 16 con Turbopack genera archivos en '.next', no en 'out'.
+  publish = ".next"
 
 # ===============================================
 # Configuración Opcional: Versión de Node.js
 # ===============================================
 # Esto asegura que Netlify use una versión compatible de Node.js.
-# Tu log muestra que usa v22.21.1, así que v22 está bien.
 [build.environment]
   NODE_VERSION = "20.9.0"
