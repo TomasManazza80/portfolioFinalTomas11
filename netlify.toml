@@ -5,7 +5,7 @@
   # 1. Comando de Construcción (Build Command)
   # Usamos 'npm install --force' para obligar a la instalación
   # de dependencias y evitar el conflicto de versiones (ERESOLVE).
-  command = "npm install --force && npm run build"
+  command = "npm install && npm run build"
 
   # 2. Directorio de Publicación (Publish Directory)
   # AJUSTA ESTO: Debe ser el directorio que contiene los archivos
@@ -18,4 +18,4 @@
 # Esto asegura que Netlify use una versión compatible de Node.js.
 # Tu log muestra que usa v22.21.1, así que v22 está bien.
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "18"
