@@ -1,0 +1,23 @@
+# ===============================================
+# Configuración General de Construcción
+# ===============================================
+[build]
+  # 1. Comando de Construcción (Build Command)
+  # Este comando le dice a Netlify cómo instalar las dependencias
+  # y cómo compilar tu proyecto.
+  # El '&& npm run build' ejecuta el script de construcción de tu package.json después de instalar.
+  # Usamos '--legacy-peer-deps' para ignorar el conflicto con blobity/react 19.
+  command = "npm install --legacy-peer-deps && npm run build"
+
+  # 2. Directorio de Publicación (Publish Directory)
+  # Este es el directorio que Netlify debe desplegar (los archivos estáticos finales).
+  # AJUSTA ESTO: Cambia "out" al directorio que tu herramienta de construcción genera (ej. "build", "dist", ".next", "public").
+  publish = "out"
+
+# ===============================================
+# Configuración Opcional: Versión de Node.js
+# ===============================================
+# Si quieres especificar una versión de Node.js más reciente o específica, puedes usar esto.
+# Tu log mostró que Netlify está usando v22.21.1, pero puedes asegurarte.
+[build.environment]
+  NODE_VERSION = "22"
