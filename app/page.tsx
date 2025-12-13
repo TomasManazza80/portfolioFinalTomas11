@@ -1,7 +1,7 @@
 "use client";
 import Hero from "./hero-section/Hero";
-import useBlobity from "blobity/lib/react/useBlobity";
 import { useEffect } from "react";
+import Blobity from "blobity";
 import { ScrollerMotion } from "scroller-motion";
 import PreLoader from "./animations/PreLoader/PreLoader";
 import { initialBlobityOptions } from "./utils/BlobityConfig";
@@ -16,14 +16,19 @@ const Contact = dynamic(() => import("./contact-section/Contact"));
 const Footer = dynamic(() => import("./footer/Footer"));
 
 export default function Home() {
-  const blobityInstance = useBlobity(initialBlobityOptions);
-
   useEffect(() => {
-    if (blobityInstance.current) {
-      // @ts-ignore for debugging purposes or playing around
-      window.blobity = blobityInstance.current;
-    }
-  }, [blobityInstance]);
+    // Inicializa Blobity con tus opciones
+    const blobity = new Blobity(initialBlobityOptions);
+
+    // Para debugging, lo expones en window
+    // @ts-ignore
+    window.blobity = blobity;
+
+    // Limpieza al desmontar
+    return () => {
+      blobity.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     window.scrollTo({
@@ -35,20 +40,16 @@ export default function Home() {
   return (
     <>
       <PreLoader />
-
       <NavBar />
-
-      {/* <ScrollerMotion> */}
       <main className="flex flex-col items-center justify-center">
         <Hero />
         <Work />
-        <Reviews/>
+        <Reviews />
         <About />
         <Blog />
         <Contact />
         <Footer />
       </main>
-      {/* </ScrollerMotion> */}
     </>
   );
 }
