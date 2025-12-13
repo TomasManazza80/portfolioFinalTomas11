@@ -32,18 +32,6 @@ export const devProjects = [
   image: require(".//../../public/projects/PROYECTOS/ecommerce.png"),
   available: true,
 },
- 
-  {
-    id: 2,
-    name: "EXODIUM GYM",
-    description:
-      "Built specifically for an AI startup, this website lets them present cutting-edge AI data processing solutions tailored to their customers' needs.",
-    technologies: ["React", "Next.js", "Prismic CMS"],
-    github: "https://github.com/TomasManazza80",
-    demo: "https://exodium.netlify.app/",
-    image: require(".//../../public/projects/PROYECTOS/Exodium.png"),
-    available: true,
-  },
  {
   id: 1,
   name: "NEW STYLE",
@@ -55,6 +43,24 @@ export const devProjects = [
   image: require(".//../../public/projects/PROYECTOS/newStyle.png"),
   available: true,
 },
+
+
+
+  {
+    id: 2,
+    name: "Reparacion de Celulares",
+    description:
+      "En desarrollo: Sistema de gestión para un negocio de reparación de celulares. Permite registrar y administrar reparaciones, gestionar clientes y controlar el inventario de repuestos. Incluye funcionalidades para seguimiento de órdenes, generación de presupuestos y reportes de ventas.",
+    technologies: ["React", "Next.js", "Prismic CMS"],
+    github: "https://github.com/TomasManazza80",
+    demo: "",
+    image: require(".//../../public/projects/PROYECTOS/fede.png"),
+    available: true,
+  }
+
+,
+
+
   // {
   //   id: 4,
   //   name: "Flixify",
