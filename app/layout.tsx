@@ -128,6 +128,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         {/* JSON-LD (Schema Markup) - Crucial para SEO */}
         <link rel="canonical" href="https://tomasmanazza.com/" />
+        <meta name="google-site-verification" content="Tviee0mVRz9tlPLOv5_waP-rNS3m0y4K2mbqDHSqPJE" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
